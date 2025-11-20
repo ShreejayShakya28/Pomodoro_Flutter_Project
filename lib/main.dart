@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Pomodoro',
       theme: ThemeData(
 
         colorScheme: .fromSeed(seedColor: Colors.deepPurple,brightness: Brightness.dark,),
@@ -31,39 +31,57 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
+@override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blueGrey,
+      
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-
-        title: Text(widget.title),
+        centerTitle: true,
+        title: Text('Pomodoro',textAlign: TextAlign.center),
+        backgroundColor: Colors.black,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: .center,
+      body : Center(
+        child: Container(
+          height : 400,
+          width : 400,
+          decoration: BoxDecoration(
+            color: Colors.white
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+        // Row 1
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('counters'),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+            Container(width: 80, height: 80, color: Colors.red, child: Center(child: Text('1,1'))),
+            Container(width: 80, height: 80, color: Colors.red, child: Center(child: Text('1,2'))),
+            Container(width: 80, height: 80, color: Colors.red, child: Center(child: Text('1,3'))),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
-    );
+        // Row 2
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(width: 80, height: 80, color: Colors.red, child: Center(child: Text('2,1'))),
+            Container(width: 80, height: 80, color: Colors.red, child: Center(child: Text('2,2'))),
+            Container(width: 80, height: 80, color: Colors.red, child: Center(child: Text('2,3'))),
+          ],
+        ),
+        // Row 3
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(width: 80, height: 80, color: Colors.red, child: Center(child: Text('3,1'))),
+            Container(width: 80, height: 80, color: Colors.red, child: Center(child: Text('3,2'))),
+            Container(width: 80, height: 80, color: Colors.red, child: Center(child: Text('3,3'))),
+          ],
+        ),
+      ],
+          )
+          )
+          )
+        );
   }
 }
